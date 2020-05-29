@@ -1,0 +1,52 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd
+       ">
+
+
+    <!-- Allows us to use system properties as variables in this configuration file -->
+   <bean 
+       class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+       <property name="ignoreResourceNotFound" value="true" />
+       <property name="locations">
+           <list>
+               <value>classpath:applicationContext.properties</value>
+               <value>classpath:local.properties</value>
+           </list>
+       </property>
+   </bean>
+
+   <bean id="broker" class="org.apache.camel.component.activemq.ActiveMQConnectionFactory">
+      <property name="brokerURL" value="tcp://localhost:61616" />
+   </bean>
+   <bean id="jms" class="org.apache.camel.component.jms.JmsComponent">
+     <property name="connectionFactory" ref="broker" />
+   </bean>
+
+<!--
+   <bean id="broker" class="org.apache.camel.component.kafka.KafkaComponent">
+      <property name="brokers" value="localhost:9092" />
+   </bean>
+-->
+
+  <bean id="msgCounter" class="com.sema4.processor.MsgProcessor" />
+
+  <camelContext xmlns="http://camel.apache.org/schema/spring">
+    <route>
+      <!-- from uri="netty4://localhost:${IAPort}?textline=true&amp;sync=false"/ -->
+      <from uri="netty4:tcp://0.0.0.0:1411?textline=true&amp;sync=false&amp;clientMode=false"/>
+      <to uri="broker:topic:msgs"/>
+    </route>
+
+    <route>
+       <from uri="broker:topic:msgs" />
+       <process ref="msgCounter" />
+       <!-- to uri="netty4://${endpoint1}:4411" / -->
+       <to uri="netty4:tcp://172.31.34.214:4411?reuseChannel=true&amp;clientMode=true" />
+    </route>
+  </camelContext>
+
+</beans>
+

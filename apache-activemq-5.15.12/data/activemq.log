@@ -1,0 +1,24 @@
+2020-05-28 14:11:05,435 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@a67c67e: startup date [Thu May 28 14:11:05 UTC 2020]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2020-05-28 14:11:07,414 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/home/ec2-user/src/apache-activemq-5.15.12/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2020-05-28 14:11:07,567 | INFO  | PListStore:[/home/ec2-user/src/apache-activemq-5.15.12/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2020-05-28 14:11:07,721 | INFO  | Apache ActiveMQ 5.15.12 (localhost, ID:ip-172-31-34-214.ec2.internal-35347-1590675067591-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2020-05-28 14:11:07,751 | INFO  | Listening for connections at: tcp://ip-172-31-34-214.ec2.internal:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2020-05-28 14:11:07,753 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2020-05-28 14:11:07,758 | INFO  | Listening for connections at: amqp://ip-172-31-34-214.ec2.internal:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2020-05-28 14:11:07,768 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2020-05-28 14:11:07,788 | INFO  | Listening for connections at: stomp://ip-172-31-34-214.ec2.internal:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2020-05-28 14:11:07,795 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2020-05-28 14:11:07,810 | INFO  | Listening for connections at: mqtt://ip-172-31-34-214.ec2.internal:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2020-05-28 14:11:07,814 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2020-05-28 14:11:07,820 | INFO  | Starting Jetty server | org.apache.activemq.transport.WebTransportServerSupport | main
+2020-05-28 14:11:07,949 | INFO  | Creating Jetty connector | org.apache.activemq.transport.WebTransportServerSupport | main
+2020-05-28 14:11:08,346 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@29ca3d04{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2020-05-28 14:11:08,442 | INFO  | Listening for connections at ws://ip-172-31-34-214.ec2.internal:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2020-05-28 14:11:08,443 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2020-05-28 14:11:08,444 | INFO  | Apache ActiveMQ 5.15.12 (localhost, ID:ip-172-31-34-214.ec2.internal-35347-1590675067591-0:1) started | org.apache.activemq.broker.BrokerService | main
+2020-05-28 14:11:08,445 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2020-05-28 14:11:08,446 | WARN  | Store limit is 102400 mb (current store usage is 0 mb). The data directory: /home/ec2-user/src/apache-activemq-5.15.12/data/kahadb only has 6353 mb of usable space. - resetting to maximum available disk space: 6353 mb | org.apache.activemq.broker.BrokerService | main
+2020-05-28 14:11:08,447 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: /home/ec2-user/src/apache-activemq-5.15.12/data only has 6353 mb of usable space. - resetting to maximum available disk space: 6353 mb | org.apache.activemq.broker.BrokerService | main
+2020-05-28 14:11:09,948 | INFO  | ActiveMQ WebConsole available at http://0.0.0.0:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2020-05-28 14:11:09,948 | INFO  | ActiveMQ Jolokia REST API available at http://0.0.0.0:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2020-05-28 19:13:19,934 | WARN  | Transport Connection to: tcp://127.0.0.1:42748 failed: java.io.EOFException | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///127.0.0.1:42748@61616
